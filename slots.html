@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Slots</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <a class="back" href="index.html">‹</a>
+        Slots
+        <span class="logo">PayPal</span>
+        <span class="help">?</span>
+      </header>
+      <p class="sub">Zavrti kolesa in ujemi svojo srečo.</p>
+      <main>
+        <div class="bal">
+          <span>Dobrodošlija za vaši</span>
+          <b>1.000,00 €</b>
+        </div>
+        <div class="slot">
+          <div style="color:var(--gold)">Srečne sedmice</div>
+          <div class="reels">
+            <div class="reel">7</div>
+            <div class="reel">7</div>
+            <div class="reel">7</div>
+          </div>
+          <div class="note">Zmaga samo ce je 777 · Dobitek do 1.000 ×</div>
+        </div>
+        <div class="two">
+          <div>Tvoja stava<b>1,00 €</b></div>
+          <div>Zadnji dobitek<b>25,00 €</b></div>
+        </div>
+        <button class="btn" id="zavrti" type="button">Zavrti kolesa</button>
+        <div class="row note">
+          <span>Pravila igre</span>
+          <span>Samodejno vrtenje</span>
+        </div>
+        <p class="note">Igraj odgovorno. Igraj le, če si star/-a 18+.</p>
+      </main>
+      <nav>
+        <a href="slots.html" class="on">
+          <span>🎰</span>Slots
+        </a>
+        <a href="ruleta.html">
+          <span>🎡</span>Ruleta
+        </a>
+        <a href="blackjack.html">
+          <span>🂡</span>Blackjack
+        </a>
+        <a href="promocije.html">
+          <span>🎁</span>Promocije
+        </a>
+      </nav>
+    </div>
+    <script>
+      var b = document.getElementById("zavrti"),
+          r = document.querySelectorAll(".reel");
+
+      function nakljucno() {
+        return Math.floor(Math.random() * 9) + 1;
+      }
+
+      function rezultat() {
+        var x;
+        do {
+          x = [nakljucno(), nakljucno(), nakljucno()];
+        } while (x[0] == 7 && x[1] == 7 && x[2] == 7);
+        return x;
+      }
+
+      b.onclick = function () {
+        b.disabled = true;
+        var t = setInterval(function () {
+          r.forEach(function (e) {
+            e.textContent = nakljucno();
+          });
+        }, 80);
+        setTimeout(function () {
+          clearInterval(t);
+          var x = rezultat();
+          x.forEach(function (v, i) {
+            r[i].textContent = v;
+          });
+          setTimeout(function () {
+            alert(x[0] == 7 && x[1] == 7 && x[2] == 7 ? "Zmagali ste!" : "Izgubili ste!");
+            b.disabled = false;
+          }, 300);
+        }, 1500);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,541 @@
+:root {
+  --bg: #0b3d28;
+  --bg2: #06241a;
+  --card: #0a2e20;
+  --line: #1f5a3f;
+  --red: #ff1f2d;
+  --gold: #e8c14a;
+  --tx: #fff;
+  --mut: #9fc2b0;
+  --in: #eef5ee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Patrick Hand", "Comic Sans MS", cursive, sans-serif;
+  background: #1c1c1c;
+  color: var(--tx);
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 4px;
+  font-size: 20px;
+}
+
+.top .back {
+  font-size: 22px;
+  width: 24px;
+}
+
+.top .logo {
+  margin-left: auto;
+  margin-right: 8px;
+  font-weight: 700;
+  color: #3b82f6;
+  font-size: 17px;
+}
+
+.top .help {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--mut);
+  border-radius: 50%;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--mut);
+}
+
+.sub {
+  padding: 0 16px 10px;
+  color: var(--mut);
+  font-size: 13px;
+}
+
+main {
+  flex: 1;
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px;
+  font: inherit;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn.dark {
+  background: #0a2e20;
+  border: 1px solid var(--line);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.bal {
+  background: #06241a;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--mut);
+}
+
+.bal b {
+  color: #fff;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.note {
+  text-align: center;
+  font-size: 11px;
+  color: var(--mut);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.row > * {
+  flex: 1;
+}
+
+nav {
+  display: flex;
+  background: #050f0a;
+  padding: 8px 4px 14px;
+  border-top: 1px solid #0d2a1c;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: var(--mut);
+}
+
+nav a span {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+nav a.on {
+  color: var(--red);
+}
+
+nav a.on::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+/* uvod */
+.hero {
+  flex: 1;
+  padding: 70px 24px 24px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 13px;
+  color: var(--mut);
+  margin: 8px 0 26px;
+  max-width: 170px;
+}
+
+.cards {
+  height: 220px;
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.pc {
+  position: absolute;
+  width: 88px;
+  height: 120px;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px #0007;
+}
+
+.pc.r {
+  color: var(--red);
+}
+
+.chip {
+  position: absolute;
+  right: 20px;
+  bottom: 8px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 8px dashed #fff;
+  box-shadow: 0 0 0 4px var(--red);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 24px 0;
+  background: #031109;
+  font-size: 40px;
+}
+
+/* forma */
+label {
+  font-size: 12px;
+  color: var(--mut);
+  display: block;
+  margin-bottom: 3px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date] {
+  width: 100%;
+  background: var(--in);
+  border: 0;
+  border-radius: 4px;
+  padding: 9px;
+  font: inherit;
+  color: #222;
+}
+
+.chk {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--mut);
+  align-items: flex-start;
+}
+
+/* blackjack */
+.table {
+  background: #0a3a26;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hand {
+  display: flex;
+  gap: 10px;
+}
+
+.pl {
+  width: 62px;
+  height: 84px;
+  background: #fff;
+  color: #111;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.pl.r {
+  color: var(--red);
+}
+
+.pl.back {
+  background: var(--red);
+  border: 3px solid #fff;
+}
+
+.stake {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.stake i {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--red);
+  font-style: normal;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.stake em {
+  margin-left: auto;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* slots */
+.slot {
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  background: var(--card);
+}
+
+.reels {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.reel {
+  flex: 1;
+  background: #fff;
+  border-radius: 6px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  font-size: 76px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.two div {
+  background: #06241a;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+  color: var(--mut);
+}
+
+.two b {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* ruleta */
+.wheel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 6px solid #3a2410;
+  background: conic-gradient(
+    var(--red) 0 10deg,
+    #111 0 20deg,
+    var(--red) 0 30deg,
+    #111 0 40deg,
+    var(--red) 0 50deg,
+    #111 0 60deg,
+    var(--red) 0 70deg,
+    #111 0 80deg,
+    var(--red) 0 90deg,
+    #111 0 100deg,
+    var(--red) 0 110deg,
+    #111 0 120deg,
+    var(--red) 0 130deg,
+    #111 0 140deg,
+    var(--red) 0 150deg,
+    #111 0 160deg,
+    var(--red) 0 170deg,
+    #111 0 180deg,
+    var(--red) 0 190deg,
+    #111 0 200deg,
+    var(--red) 0 210deg,
+    #111 0 220deg,
+    var(--red) 0 230deg,
+    #111 0 240deg,
+    var(--red) 0 250deg,
+    #111 0 260deg,
+    var(--red) 0 270deg,
+    #111 0 280deg,
+    var(--red) 0 290deg,
+    #111 0 300deg,
+    var(--red) 0 310deg,
+    #111 0 320deg,
+    var(--red) 0 330deg,
+    #111 0 340deg,
+    var(--red) 0 350deg,
+    #0a7a3a 0
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.wheel::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(var(--gold) 20%, #7a5a14 22%, #2a1c08);
+}
+
+.last {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--mut);
+  align-items: center;
+}
+
+.last b {
+  width: 32px;
+  height: 28px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 15px;
+  background: var(--red);
+}
+
+.last b.k {
+  background: #111;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2px;
+}
+
+.grid b {
+  height: 20px;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 2px;
+  background: var(--red);
+  font-weight: 400;
+}
+
+.grid b.k {
+  background: #111;
+}
+
+.chips {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chips b {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px dashed #fff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  background: #111;
+}
+
+.chips b.s {
+  background: var(--red);
+}
+
+/* promocije */
+.promo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.promo .ic {
+  font-size: 36px;
+}
+
+.promo small {
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.promo h3 {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.big {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.link {
+  color: var(--mut);
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}

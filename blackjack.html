@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blackjack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <a class="back" href="registracija.html">‹</a>
+        Blackjack
+        <span class="logo">PayPal</span>
+        <span class="help">?</span>
+      </header>
+      <p class="sub">Približi se 21. Ne presegaj je.</p>
+      <main>
+        <div class="bal">
+          <span>Dobrodošlija za vaši</span>
+          <b>1.000,00 €</b>
+        </div>
+        <div class="table">
+          <div class="note">Delivec: 10</div>
+          <div class="hand">
+            <div class="pl">10♠</div>
+            <div class="pl back"></div>
+          </div>
+          <div class="note" style="color:var(--gold)">Blackjack izplača 3 : 2</div>
+          <div class="hand">
+            <div class="pl r">A♥</div>
+            <div class="pl">7♠</div>
+          </div>
+          <div class="note">Tvoje karte: 8 / 18</div>
+        </div>
+        <div class="stake">
+          <i>10</i>
+          Tvoja stava: 10,00 €
+          <em>Na vrsti si!</em>
+        </div>
+        <div class="row">
+          <button class="btn" type="button" onclick="alert('Izgubili ste!')">Vzemi karto</button>
+          <button class="btn dark" type="button" onclick="alert('Dealer je dobil blackjack!')">Ostani</button>
+        </div>
+        <div class="row note">
+          <span>Podvoji stavo</span>
+          <span>Pravila igre</span>
+        </div>
+        <p class="note">Igraj odgovorno. Igraj le, če si star/-a 18+.</p>
+      </main>
+      <nav>
+        <a href="slots.html">
+          <span>🎰</span>Slots
+        </a>
+        <a href="ruleta.html">
+          <span>🎡</span>Ruleta
+        </a>
+        <a href="blackjack.html" class="on">
+          <span>🂡</span>Blackjack
+        </a>
+        <a href="promocije.html">
+          <span>🎁</span>Promocije
+        </a>
+      </nav>
+    </div>
+  </body>
+</html>
